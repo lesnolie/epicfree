@@ -1,4 +1,4 @@
-2024-07-05 06:21:59 | ERROR    | __main__:run:158 | An error has been caught in function 'run', process 'MainProcess' (3764), thread 'MainThread' (139917846207360): - {}
+2024-07-06 06:21:53 | ERROR    | __main__:run:158 | An error has been caught in function 'run', process 'MainProcess' (3728), thread 'MainThread' (139902125325184): - {}
 Traceback (most recent call last):
   File "/home/runner/work/epicfree/epicfree/epic/src/claim.py", line 162, in <module>
     asyncio.run(run())
@@ -18,6 +18,21 @@ Traceback (most recent call last):
     await self.claim_epic_games(context)
   File "/home/runner/work/epicfree/epicfree/epic/src/claim.py", line 98, in claim_epic_games
     if await epic.authorize(page):
-  File "/home/runner/work/epicfree/epicfree/epic/src/epic_games/agent.py", line 269, in authorize
-    raise RuntimeError(f"Failed to flush token - agent={self.__class__.__name__}")
-RuntimeError: Failed to flush token - agent=EpicGames
+  File "/home/runner/work/epicfree/epicfree/epic/src/epic_games/agent.py", line 260, in authorize
+    match await self._login(page):
+  File "/home/runner/work/epicfree/epicfree/epic/src/epic_games/agent.py", line 234, in _login
+    await page.goto(URL_CLAIM, wait_until="domcontentloaded")
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/async_api/_generated.py", line 8818, in goto
+    await self._impl_obj.goto(
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_page.py", line 524, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: NS_ERROR_ABORT
+Call log:
+navigating to "https://store.epicgames.com/en-US/free-games", waiting until "domcontentloaded"
+
