@@ -1,11 +1,41 @@
-2024-08-27 06:20:08 | INFO    | __main__:stash:131 | run - {'image': '20231121', 'version': '0.10.1.post2', 'role': 'EpicPlayer', 'headless': True}
-2024-08-27 06:20:19 | INFO    | __main__:claim_epic_games:97 | Try to flush cookie - {'task': 'claim_epic_games'}
-2024-08-27 06:20:49 | WARNING    | epic_games.agent:authorize:266 | 执行超时 - {'task': 'authorize', 'retry': 0}
-2024-08-27 06:20:51 | INFO    | epic_games.agent:_login:237 | login-with-email - {'url': 'https://www.epicgames.com/id/login?lang=en-US&noHostRedirect=true&redirectUrl=https://store.epicgames.com/en-US/free-games&__cf_chl_rt_tk=ps8z5Sot_.qiIP.XvCjzKwpNAOLsCmMyO9mgg9FR9aw-1724710851-0.0.1.1-7401'}
-2024-08-27 06:21:21 | WARNING    | epic_games.agent:authorize:266 | 执行超时 - {'task': 'authorize', 'retry': 1}
-2024-08-27 06:21:24 | INFO    | epic_games.agent:_login:237 | login-with-email - {'url': 'https://www.epicgames.com/id/login?lang=en-US&noHostRedirect=true&redirectUrl=https://store.epicgames.com/en-US/free-games&__cf_chl_rt_tk=g8jSdpGxQEThGR7HQpyohI.H3OPIIbQWE72LSitXtOI-1724710884-0.0.1.1-7359'}
-2024-08-27 06:21:54 | WARNING    | epic_games.agent:authorize:266 | 执行超时 - {'task': 'authorize', 'retry': 2}
-2024-08-27 06:21:54 | ERROR    | __main__:run:158 | An error has been caught in function 'run', process 'MainProcess' (3675), thread 'MainThread' (140170055957376): - {}
+2024-08-28 06:20:22 | INFO    | __main__:stash:131 | run - {'image': '20231121', 'version': '0.10.1.post2', 'role': 'EpicPlayer', 'headless': True}
+2024-08-28 06:20:26 | WARNING    | epic_games.agent:get_order_history:467 | Failed to get order history, cookie may have expired - {}
+2024-08-28 06:20:26 | DEBUG    | __main__:create_tasks:66 | Put task - {'title': 'The Callisto Protocol', 'url': 'https://store.epicgames.com/en-US/p/the-callisto-protocol'}
+2024-08-28 06:20:26 | DEBUG    | __main__:create_tasks:66 | Put task - {'title': 'Gigantic: Rampage Edition', 'url': 'https://store.epicgames.com/en-US/p/gigantic-rampage-edition-03f532'}
+2024-08-28 06:20:32 | ERROR    | hcaptcha_challenger.onnx.modelhub:pull_model:414 | An error has been caught in function 'pull_model', process 'MainProcess' (3743), thread 'MainThread' (140190257560448): - {}
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpx/_transports/default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpx/_transports/default.py", line 116, in __iter__
+    for part in self._httpcore_stream:
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 367, in __iter__
+    raise exc from None
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 363, in __iter__
+    for part in self._stream:
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_sync/http2.py", line 582, in __iter__
+    raise exc
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_sync/http2.py", line 572, in __iter__
+    for chunk in self._connection._receive_response_body(
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_sync/http2.py", line 313, in _receive_response_body
+    event = self._receive_stream_event(request, stream_id)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_sync/http2.py", line 333, in _receive_stream_event
+    self._receive_events(request, stream_id)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_sync/http2.py", line 361, in _receive_events
+    events = self._read_incoming_data(request)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_sync/http2.py", line 452, in _read_incoming_data
+    raise exc
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_sync/http2.py", line 438, in _read_incoming_data
+    data = self._network_stream.read(self.READ_NUM_BYTES, timeout)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_backends/sync.py", line 124, in read
+    with map_exceptions(exc_map):
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/home/runner/work/epicfree/epicfree/epic/src/claim.py", line 162, in <module>
     asyncio.run(run())
@@ -19,12 +49,47 @@ Traceback (most recent call last):
     handle._run()
   File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/asyncio/events.py", line 80, in _run
     self._context.run(self._callback, *self._args)
-> File "/home/runner/work/epicfree/epicfree/epic/src/claim.py", line 158, in run
+  File "/home/runner/work/epicfree/epicfree/epic/src/claim.py", line 158, in run
     await agent.stash()
-  File "/home/runner/work/epicfree/epicfree/epic/src/claim.py", line 151, in stash
-    await self.claim_epic_games(context)
-  File "/home/runner/work/epicfree/epicfree/epic/src/claim.py", line 98, in claim_epic_games
-    if await epic.authorize(page):
-  File "/home/runner/work/epicfree/epicfree/epic/src/epic_games/agent.py", line 269, in authorize
-    raise RuntimeError(f"Failed to flush token - agent={self.__class__.__name__}")
-RuntimeError: Failed to flush token - agent=EpicGames
+  File "/home/runner/work/epicfree/epicfree/epic/src/claim.py", line 150, in stash
+    install(upgrade=True, clip=True)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/hcaptcha_challenger/__init__.py", line 95, in install
+    register_pipline(modelhub, install_only=True)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/hcaptcha_challenger/components/zero_shot_image_classifier.py", line 74, in register_pipline
+    v_net = modelhub.match_net(visual_model, install_only=install_only)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/hcaptcha_challenger/onnx/modelhub.py", line 466, in match_net
+    self.pull_model(focus_name)
+> File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/hcaptcha_challenger/onnx/modelhub.py", line 414, in pull_model
+    request_resource(focus_asset.browser_download_url, model_path.absolute())
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/tenacity/__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/tenacity/__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/tenacity/__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/tenacity/__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/hcaptcha_challenger/onnx/modelhub.py", line 65, in request_resource
+    for chunk in response.iter_bytes():
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpx/_models.py", line 831, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpx/_models.py", line 885, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpx/_client.py", line 127, in __iter__
+    for chunk in self._stream:
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpx/_transports/default.py", line 115, in __iter__
+    with map_httpcore_exceptions():
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/httpx/_transports/default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2024-08-28 06:20:34 | INFO    | epic_games.agent:claim_weekly_games:294 | claim_weekly_games - {'action': 'go to store', 'url': 'https://store.epicgames.com/en-US/p/the-callisto-protocol'}
+2024-08-28 06:21:10 | INFO    | epic_games.agent:claim_weekly_games:294 | claim_weekly_games - {'action': 'go to store', 'url': 'https://store.epicgames.com/en-US/p/gigantic-rampage-edition-03f532'}
+2024-08-28 06:21:23 | SUCCESS    | epic_games.agent:claim_weekly_games:314 | Pass claim task - {'reason': 'Free games not added to shopping cart'}
